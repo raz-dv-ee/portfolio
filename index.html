@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raz Dvora | Electrical & Electronics Engineer</title>
+    <title>Raz Dvora | Electrical &amp; Electronics Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #0056b3;
@@ -218,11 +218,11 @@
             <img src="images/RAZ.JPG" alt="Raz Dvora - Profile Picture" class="profile-image">
             <div class="header-text">
                 <h1>RAZ DVORA</h1>
-                <p class="subtitle">B.Sc. Electrical & Electronics Engineering | Hardware, Validation & VLSI</p>
+                <p class="subtitle">Electrical &amp; Electronics Engineer | System Validation, Sensors &amp; Automation</p>
                 <div class="contact-info">
                     <a href="mailto:Razdvora232@gmail.com">Razdvora232@gmail.com</a> |
                     <a href="tel:+972-54-797-9816">+972-54-797-9816</a> |
-                    <a href="https://linkedin.com/in/raz-dvora-201b21146" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/raz-dvora/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
         </header>
@@ -230,12 +230,27 @@
         <section id="summary">
             <h2>SUMMARY</h2>
             <div class="card">
-                <p>A results-driven Electrical Engineering graduate specializing in hardware validation, embedded systems, and VLSI design, with a strong foundation in computer vision and software algorithms. Possesses extensive hands-on experience with advanced test equipment, circuit simulation, and troubleshooting complex hardware from the board level down to the component.</p>
+                <p>I work where sensors, software, controls, and physical system behavior meet. At BEUMER Group, I investigate industrial system issues and build Python tools that turn operational data into questions engineers can test. My background also includes RF hardware validation, embedded sensing, and computer vision. I enjoy following a problem from measurement and root-cause analysis through to a solution that can be verified in the real world.</p>
             </div>
         </section>
 
         <section id="experience">
             <h2>PROFESSIONAL EXPERIENCE</h2>
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h3>Service Engineer</h3>
+                        <p><strong>BEUMER Group</strong></p>
+                    </div>
+                    <div class="date">February 2026 – Present</div>
+                </div>
+                <ul>
+                    <li>Built Python-based reporting and analysis workflows that combine operational exports into reproducible reports and dashboards.</li>
+                    <li>Investigate electromechanical and control-system issues using operational data, drive diagnostics, sensor behavior, and technical documentation.</li>
+                    <li>Support system-level testing and commissioning, connecting field observations with software, controls, and physical system behavior.</li>
+                    <li>Develop a structured approach to identifying bottlenecks, testing hypotheses, and verifying improvements.</li>
+                </ul>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <div>
@@ -245,9 +260,9 @@
                     <div class="date">May 2024 – April 2025</div>
                 </div>
                 <ul>
-                    <li>Owned the end-to-end validation process for satellite communication PCBs, utilizing automated and manual test methodologies.</li>
-                    <li>Validated RF performance and characterized high-speed signals, debugging critical issues with oscilloscopes and network analyzers.</li>
-                    <li>Ensured hardware reliability by executing rigorous environmental stress tests (Thermal & Shaker).</li>
+                    <li>Validated satellite-communications hardware and RF signal paths using oscilloscopes, network analyzers, and functional test procedures.</li>
+                    <li>Investigated hardware-software integration issues and documented findings for engineering teams.</li>
+                    <li>Supported system-level and environmental validation, including thermal and vibration testing.</li>
                    
                 </ul>
             </div>
@@ -260,44 +275,52 @@
                     <div class="date">November 2023 – February 2024</div>
                 </div>
                 <ul>
-                    <li>Architected and developed a complete IoT monitoring system from scratch using an ESP32 and programmed in C.</li>
-                    <li>Designed the analog sensor interface circuit, ensuring reliable signal conditioning between the sensor and the microcontroller.</li>
+                    <li>Developed an ESP32-based monitoring prototype in C, integrating sensor acquisition, processing, and system-level testing.</li>
+                    <li>Designed and tested an analog interface for signal conditioning and reliable sensor data capture.</li>
                 </ul>
             </div>
             <div class="card">
                 <div class="card-header">
                     <div>
-                        <h3>Shift Manager & Data Analyst</h3>
+                        <h3>Shift Manager</h3>
                         <p><strong>Sensi.AI</strong></p>
                     </div>
                     <div class="date">March 2022 – November 2023</div>
                 </div>
                 <ul>
-                    <li>Managed and led a team of 20+ operators in a high-pressure, real-time AI monitoring environment.</li>
-                    <li>Engaged in a special project as a Data Analyst (July–Sept 2022), using Python, Pandas, and NumPy to process and analyze datasets.</li>
-                    <li>Took initiative to solve a workflow bottleneck by independently developing an internal web tool, significantly reducing manual errors.</li>
+                    <li>Led a 20+ person data-annotation team, coordinating delivery and reviewing the consistency and quality of training data.</li>
+                    <li>Built an internal Python tool with pandas and NumPy to review outputs and make recurring checks more efficient.</li>
+                    <li>Investigated annotation edge cases and translated findings into feedback and bug reports for R&amp;D.</li>
                 </ul>
             </div>
         </section>
 
         <section id="projects">
-            <h2>ACADEMIC PROJECTS PORTFOLIO</h2>
+            <h2>SELECTED PROJECTS</h2>
             <div class="card">
-                <h3><a href="finalPROJECT.pdf" target="_blank">MIPS Processor Architecture & Performance Optimization (VLSI)</a></h3>
+                <h3><a href="https://raz-dv-ee.github.io/CalEyeZ/" target="_blank" rel="noopener noreferrer">CalEyeZ — Computer Vision &amp; Sensor Fusion</a></h3>
                 <ul>
-                    <li>Designed a single-cycle MIPS processor in Verilog and architected optimizations (custom ISA, ASIC-like implementation) to achieve a performance improvement of over 98%.</li>
+                    <li>Co-developed a working system that combines food recognition, weight from a BLE scale, and nutritional lookup to estimate calories and macronutrients.</li>
+                    <li>Used two specialist vision models and a learned arbiter to handle both international and local foods; tested failures and revised the system based on measured results.</li>
+                    <li>Integrated the sensing, inference, and user interface in a Python desktop application. <a href="https://github.com/raz-dv-ee/CalEyeZ" target="_blank" rel="noopener noreferrer">View the project repository</a>.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3><a href="mini project op amp design-1.pdf" target="_blank">CMOS Operational Amplifier Design (Analog IC Design)</a></h3>
+                <h3><a href="finalPROJECT.pdf" target="_blank" rel="noopener noreferrer">MIPS Processor Architecture &amp; Performance Optimization (VLSI)</a></h3>
+                <ul>
+                    <li>Designed a single-cycle MIPS processor in Verilog and explored ISA and datapath optimizations.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><a href="mini project op amp design-1.pdf" target="_blank" rel="noopener noreferrer">CMOS Operational Amplifier Design (Analog IC Design)</a></h3>
                 <ul>
                     <li>Designed a two-stage CMOS Op-Amp from scratch at the transistor level and performed comprehensive characterization using LTspice to validate key performance metrics.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3><a href="I am sharing _final pres_ with you.pdf" target="_blank">Digital TX/RX Communication System (Digital Design)</a></h3>
+                <h3><a href="I am sharing _final pres_ with you.pdf" target="_blank" rel="noopener noreferrer">Digital TX/RX Communication System (Digital Design)</a></h3>
                 <ul>
-                    <li>Architected and implemented a complete digital communication system with transmitter (TX) and receiver (RX) modules in Verilog, managed by Finite State Machines (FSMs).</li>
+                    <li>Implemented transmitter and receiver modules in Verilog, with finite-state machines coordinating the data flow.</li>
                 </ul>
             </div>
          
@@ -306,40 +329,40 @@
         <section id="education">
             <h2>EDUCATION</h2>
             <div class="card">
-                <h3>B.Sc., Electrical & Electronics Engineering</h3>
-                <p><strong>Shenkar, Ramat Gan</strong> | 2021–2025</p>
+                <h3>B.Sc., Electrical &amp; Electronics Engineering</h3>
+                <p><strong>Shenkar, Ramat Gan</strong> | 2021–2026 (degree eligibility confirmation pending)</p>
                 <ul>
-                    <li><strong>Specializations:</strong> VLSI & Hardware Systems</li>
-                    <li><strong>Relevant Coursework:</strong> Electronic Devices (100), Signals & Systems Analysis (97), Analog Sub-System Design (95), Computer Hardware Structure & Design (87).</li>
+                    <li><strong>Focus:</strong> Robotics, computer vision, image processing, control systems, and electronic hardware.</li>
+                    <li><strong>Selected coursework:</strong> Electronic Devices (100), Signals &amp; Systems Analysis (97), Analog Sub-System Design (95), Computer Hardware Structure &amp; Design (87).</li>
                 </ul>
             </div>
         </section>
 
         <section id="skills">
-            <h2>CORE SKILLS & TOOLS</h2>
+            <h2>CORE SKILLS &amp; TOOLS</h2>
             <div class="card skills-grid">
                 <div>
-                    <h3>Hardware & Testing</h3>
+                    <h3>Systems &amp; Validation</h3>
                     <ul>
-                        <li>PCB Validation</li>
-                        <li>Board Bring-up</li>
-                        <li>Debugging</li>
+                        <li>System Integration</li>
+                        <li>Root-Cause Analysis</li>
+                        <li>Hardware Validation</li>
+                        <li>Test Planning</li>
                         <li>RF Testing</li>
-                        <li>Signal Characterization</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Embedded & IoT</h3>
+                    <h3>Controls &amp; Sensing</h3>
                     <ul>
-                        <li>C Programming</li>
-                        <li>ESP32</li>
-                        <li>Real-Time Systems</li>
                         <li>Sensor Integration</li>
-                        <li>Analog Interface Design</li>
+                        <li>Industrial System Diagnostics</li>
+                        <li>Drive and I/O Troubleshooting</li>
+                        <li>ESP32 and C</li>
+                        <li>Analog Signal Conditioning</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Design & Simulation</h3>
+                    <h3>Hardware &amp; Design</h3>
                     <ul>
                         <li>Digital Logic</li>
                         <li>Verilog</li>
@@ -348,19 +371,20 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>Programming & Data</h3>
+                    <h3>Software &amp; Data</h3>
                     <ul>
                         <li>Python (Pandas, NumPy)</li>
-                        <li>C++</li>
-                        <li>MATLAB</li>
-                        <li>Computer Vision (YOLOv8)</li>
+                        <li>Data Analysis and Visualization</li>
+                        <li>Computer Vision</li>
+                        <li>Machine Learning Evaluation</li>
+                        <li>Automation Tools</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <footer>
-            <p>&copy; 2025 Raz Dvora</p>
+            <p>&copy; 2026 Raz Dvora</p>
         </footer>
 
     </div>
