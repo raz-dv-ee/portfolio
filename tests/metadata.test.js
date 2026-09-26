@@ -17,6 +17,8 @@ test('publishes a descriptive Open Graph preview for LinkedIn', () => {
   assert.ok(meta('og:description').length >= 100);
   assert.equal(meta('og:type'), 'website');
   assert.equal(meta('og:url'), 'https://raz-dv-ee.github.io/portfolio/');
-  assert.equal(meta('og:image'), 'https://raz-dv-ee.github.io/portfolio/images/RAZ.JPG');
-  assert.ok(fs.existsSync(path.join(root, 'images', 'RAZ.JPG')));
+  assert.match(meta('og:description'), /CalEyeZ/);
+  assert.doesNotMatch(meta('og:description'), /BEUMER/);
+  assert.equal(meta('og:image'), 'https://raz-dv-ee.github.io/portfolio/images/caleyez-falafel.png');
+  assert.ok(fs.existsSync(path.join(root, 'images', 'caleyez-falafel.png')));
 });

@@ -1,397 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raz Dvora | Electrical &amp; Electronics Engineer</title>
-    <meta property="og:title" content="Raz Dvora | Engineering Portfolio">
-    <meta property="og:description" content="Engineering work across industrial system diagnostics, sensor integration, Python automation, RF hardware validation, and computer vision.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://raz-dv-ee.github.io/portfolio/">
-    <meta property="og:image" content="https://raz-dv-ee.github.io/portfolio/images/RAZ.JPG">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0056b3;
-            --secondary-color: #333;
-            --bg-color: #f8f9fa;
-            --card-bg-color: #ffffff;
-            --text-color: #495057;
-            --border-color: #e9ecef;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Heebo', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 16px;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-top: 80px; /* Space for the fixed nav bar */
-        }
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        h1, h2, h3 {
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 2em;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            margin-top: 40px;
-        }
-        h3 {
-            font-size: 1.25em;
-            margin-bottom: 5px;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        li {
-            padding-left: 1.2em;
-            position: relative;
-            margin-bottom: 8px;
-        }
-        li::before {
-            content: '•';
-            color: var(--primary-color);
-            font-weight: bold;
-            display: inline-block;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Navigation Bar */
-        nav {
-            background-color: var(--card-bg-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            text-align: center;
-        }
-        nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: inline-flex;
-        }
-        nav ul li {
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li::before {
-            content: '';
-        }
-        nav a {
-            display: block;
-            padding: 15px 20px;
-            font-weight: 500;
-            color: var(--secondary-color);
-            transition: color 0.3s, background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: var(--bg-color);
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        /* --- MODIFIED HEADER SECTION --- */
-        header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            padding: 40px 20px;
-            background: var(--card-bg-color);
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        header .profile-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
-        }
-        .header-text {
-            text-align: left;
-        }
-        header h1 {
-            font-size: 3.2em;
-            margin-bottom: 5px;
-        }
-        header .subtitle {
-            font-size: 1.2em;
-            color: var(--text-color);
-            font-weight: 300;
-            margin-bottom: 15px;
-        }
-        header .contact-info a {
-            margin-right: 20px;
-            font-weight: 500;
-        }
-        /* --- END OF MODIFIED HEADER SECTION --- */
-
-        /* Card styles for experience and projects */
-        .card {
-            background: var(--card-bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-        .card-header .date {
-            color: var(--text-color);
-            font-weight: 500;
-            white-space: nowrap;
-            padding-left: 15px;
-        }
-        .card-header h3 {
-            margin-bottom: 0;
-        }
-        .card strong {
-             font-weight: 500;
-             color: var(--secondary-color);
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            body { font-size: 14px; }
-            .container { padding-top: 20px; }
-            nav { display: none; }
-            header { flex-direction: column; text-align: center; gap: 20px; }
-            .header-text { text-align: center; }
-            header h1 { font-size: 2.5em; }
-            .card-header { flex-direction: column; align-items: stretch; }
-            .card-header .date { float: none; padding-left: 0; margin-top: 5px; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5ef">
+  <title>Raz Dvora | Engineering through the whole system</title>
+  <meta name="description" content="Raz Dvora's project portfolio: CalEyeZ computer vision and sensor fusion, a home camera event system, digital hardware, and analog circuit design.">
+  <meta property="og:title" content="Raz Dvora | Engineering through the whole system">
+  <meta property="og:description" content="Explore CalEyeZ and four engineering systems, from sensing and physical signals through software decisions and validation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raz-dv-ee.github.io/portfolio/">
+  <meta property="og:image" content="https://raz-dv-ee.github.io/portfolio/images/caleyez-falafel.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-        </ul>
+  <a class="skip-link" href="#work">Skip to projects</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Raz Dvora, back to top">RAZ<span>DVORA</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <span class="header-note">Engineer / systems builder</span>
+  </header>
 
-    <div class="container">
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="hero-index">Signals → decisions → proof</p>
+        <h1 id="hero-title">I build the <em>whole loop.</em></h1>
+        <p class="hero-lead">My work connects physical systems, sensing, software and data. I like knowing what happened inside a system, why it happened, and whether a change actually fixed it.</p>
+        <a class="text-link" href="#work">Explore the projects <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-visual">
+        <img src="images/caleyez-falafel-photo.jpg" alt="A falafel sandwich photographed for CalEyeZ's own-photo validation" width="900" height="1200">
+        <div class="hero-visual-caption"><span>Input / 01</span><span>Real-world image, not a render</span></div>
+      </div>
+      <div class="hero-rail" aria-hidden="true"><span>SENSE</span><span>MODEL</span><span>VALIDATE</span></div>
+    </section>
 
-        <header>
-            <img src="images/RAZ.JPG" alt="Raz Dvora - Profile Picture" class="profile-image">
-            <div class="header-text">
-                <h1>RAZ DVORA</h1>
-                <p class="subtitle">Electrical &amp; Electronics Engineer | System Validation, Sensors &amp; Automation</p>
-                <div class="contact-info">
-                    <a href="mailto:Razdvora232@gmail.com">Razdvora232@gmail.com</a> |
-                    <a href="tel:+972-54-797-9816">+972-54-797-9816</a> |
-                    <a href="https://www.linkedin.com/in/raz-dvora/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </div>
-        </header>
+    <section id="work" class="work-intro" aria-labelledby="work-title">
+      <p class="section-kicker">Selected engineering work</p>
+      <h2 id="work-title">Systems are more interesting<br>than isolated parts.</h2>
+      <p>These projects show how I move between hardware, software, models and evidence. The first is a full case study; the others are compact architecture studies.</p>
+    </section>
 
-        <section id="summary">
-            <h2>SUMMARY</h2>
-            <div class="card">
-                <p>I work where sensors, software, controls, and physical system behavior meet. At BEUMER Group, I investigate industrial system issues and build Python tools that turn operational data into questions engineers can test. My background also includes RF hardware validation, embedded sensing, and computer vision. I enjoy following a problem from measurement and root-cause analysis through to a solution that can be verified in the real world.</p>
+    <article class="feature" aria-labelledby="caleyez-title">
+      <div class="feature-heading">
+        <div>
+          <p class="project-number">01 / Featured system</p>
+          <h2 id="caleyez-title">CalEyeZ</h2>
+        </div>
+        <p class="feature-summary">Food recognition becomes more useful when a camera prediction can meet a measurement from the physical world.</p>
+      </div>
+      <div class="feature-stage">
+        <div class="feature-stage-copy">
+          <p class="stage-label">Computer vision + sensor fusion</p>
+          <h3>From a photograph<br>to an accountable result.</h3>
+          <p>Co-developed with Roi Tzur. A camera image goes through a 132-class global expert and a 13-class Israeli-food expert. An XGBoost arbiter selects the route. A BLE scale supplies mass, which the application combines with a food reference to estimate nutrition.</p>
+          <p>The work was not only training models. It included the capture flow, routing, scale integration, interface and independent checks against real photos.</p>
+          <div class="result-pair">
+            <div><strong>86.2%</strong><span>Full routed-system top-1 on the documented held-out split</span></div>
+            <div><strong>40 of 47</strong><span>Correct on a separate own-photo validation set</span></div>
+          </div>
+          <div class="project-links">
+            <a href="https://raz-dv-ee.github.io/CalEyeZ/">Explore the full CalEyeZ study <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/raz-dv-ee/CalEyeZ">View project repository <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="hero-evidence">
+          <img src="images/caleyez-falafel.png" alt="CalEyeZ falafel evidence card showing the input image, both model outputs, the selected Israeli route and explanatory features" width="1690" height="1040">
+          <figcaption>Falafel test output. The two experts disagree; the arbiter routes this image to the Israeli-food model.</figcaption>
+        </figure>
+      </div>
+      <figure class="block-diagram diagram-dark diagram-caleyez" aria-label="CalEyeZ system architecture, with vision and scale branches joining at the nutrition estimate">
+        <figcaption><span>System architecture</span><span>Vision and physical measurement</span></figcaption>
+        <div class="diagram-lanes">
+          <div class="diagram-lane">
+            <span class="lane-name">Vision path</span>
+            <div class="diagram-track">
+              <div class="diagram-node">Camera<small>Food image</small></div>
+              <span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-stack">
+                <div class="diagram-node">Global expert<small>132 classes</small></div>
+                <div class="diagram-node">Israeli expert<small>13 classes</small></div>
+              </div>
+              <span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node diagram-node-accent">XGBoost arbiter<small>Route + food class</small></div>
             </div>
-        </section>
+          </div>
+          <div class="diagram-lane">
+            <span class="lane-name">Measurement path</span>
+            <div class="diagram-track">
+              <div class="diagram-node">BLE scale<small>Physical sensor</small></div>
+              <span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">Measured mass<small>Weight input</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="diagram-converge"><span aria-hidden="true">↘ &nbsp; ↙</span> Vision result + mass</div>
+        <div class="diagram-lookup">Food reference <span aria-hidden="true">↓</span> <small>Recognized class selects nutrition values; measured mass scales the estimate</small></div>
+        <div class="diagram-result"><strong>Nutrition estimate</strong><span>Validated against held-out and separate own-photo examples</span></div>
+      </figure>
+      <div class="evidence-gallery">
+        <figure>
+          <img src="images/caleyez-sabich.png" alt="CalEyeZ sabich validation card with photographed food, expert model predictions and final routing decision" loading="lazy" width="1690" height="1040">
+          <figcaption>Sabich / routed-model test output</figcaption>
+        </figure>
+        <figure>
+          <img src="images/caleyez-fries.png" alt="CalEyeZ fries validation card showing both model outputs and the final global-expert decision" loading="lazy" width="1690" height="1040">
+          <figcaption>French fries / own-photo test output</figcaption>
+        </figure>
+      </div>
+    </article>
 
-        <section id="experience">
-            <h2>PROFESSIONAL EXPERIENCE</h2>
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3>Service Engineer</h3>
-                        <p><strong>BEUMER Group</strong></p>
-                    </div>
-                    <div class="date">February 2026 – Present</div>
-                </div>
-                <ul>
-                    <li>Built Python-based reporting and analysis workflows that combine operational exports into reproducible reports and dashboards.</li>
-                    <li>Investigate electromechanical and control-system issues using operational data, drive diagnostics, sensor behavior, and technical documentation.</li>
-                    <li>Support system-level testing and commissioning, connecting field observations with software, controls, and physical system behavior.</li>
-                    <li>Develop a structured approach to identifying bottlenecks, testing hypotheses, and verifying improvements.</li>
-                </ul>
+    <section class="architecture-grid" aria-labelledby="architecture-title">
+      <div class="architecture-intro">
+        <p class="section-kicker">Architecture studies</p>
+        <h2 id="architecture-title">Four other ways<br>to think in systems.</h2>
+        <p>The projects below are deliberately shown as signal paths, not résumé bullets.</p>
+      </div>
+      <article class="architecture-project" aria-labelledby="camera-title">
+        <div class="architecture-meta"><span>02</span><span>Event systems / Python</span></div>
+        <div class="architecture-body">
+          <h3 id="camera-title">Home camera system</h3>
+          <p>An event pipeline built around real cameras and imperfect signals. Frigate provides detection and tracking; my Python logic consumes events, handles delay and duplication, records identity decisions and leaves an audit trail that can be checked against the footage.</p>
+          <figure class="block-diagram diagram-camera" aria-label="Home camera system architecture and review path">
+            <figcaption><span>Block diagram</span><span>Capture → events → reviewable decisions</span></figcaption>
+            <div class="diagram-track">
+              <div class="diagram-node">IP cameras<small>RTSP streams</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">Frigate<small>Detection + tracking</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">Mosquitto<small>MQTT events</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node diagram-node-accent">Python event logic<small>Delay + duplicate handling</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">SQLite + local UI<small>Raw events + decisions</small></div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3>Integration Engineer</h3>
-                        <p><strong>AST SpaceMobile</strong></p>
-                    </div>
-                    <div class="date">May 2024 – April 2025</div>
-                </div>
-                <ul>
-                    <li>Validated satellite-communications hardware and RF signal paths using oscilloscopes, network analyzers, and functional test procedures.</li>
-                    <li>Investigated hardware-software integration issues and documented findings for engineering teams.</li>
-                    <li>Supported system-level and environmental validation, including thermal and vibration testing.</li>
-                   
-                </ul>
+            <div class="diagram-review"><span>Recorded footage</span><span aria-hidden="true">↔</span><span>Identity decision log</span><strong>Human verification</strong></div>
+          </figure>
+          <p class="architecture-note">Frigate is an integrated component, not a detector I wrote from scratch.</p>
+        </div>
+      </article>
+      <article class="architecture-project" aria-labelledby="mips-title">
+        <div class="architecture-meta"><span>03</span><span>Digital design / VLSI</span></div>
+        <div class="architecture-body">
+          <h3 id="mips-title">MIPS processor</h3>
+          <p>Instruction flow, datapath and control built as one digital system. A custom instruction-set extension explored how to reduce loop-execution cycles in the studied workload.</p>
+          <figure class="block-diagram diagram-mips" aria-label="MIPS processor control and datapath block diagram">
+            <figcaption><span>Block diagram</span><span>Single-cycle processor + custom operation</span></figcaption>
+            <div class="diagram-lane">
+              <span class="lane-name">Instruction and control</span>
+              <div class="diagram-track">
+                <div class="diagram-node">Program counter<small>Next instruction</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+                <div class="diagram-node">Instruction memory<small>Fetch</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+                <div class="diagram-node">Control decoder<small>Instruction + ALU control</small></div>
+              </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3>Engineering Intern</h3>
-                        <p><strong>Sonovia</strong></p>
-                    </div>
-                    <div class="date">November 2023 – February 2024</div>
-                </div>
-                <ul>
-                    <li>Developed an ESP32-based monitoring prototype in C, integrating sensor acquisition, processing, and system-level testing.</li>
-                    <li>Designed and tested an analog interface for signal conditioning and reliable sensor data capture.</li>
-                </ul>
+            <div class="diagram-converge"><span aria-hidden="true">↓</span> Control signals to datapath</div>
+            <div class="diagram-lane">
+              <span class="lane-name">Datapath</span>
+              <div class="diagram-track">
+                <div class="diagram-node">Register file<small>Source operands</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+                <div class="diagram-node diagram-node-accent">Custom ALU operation<small>Arithmetic-series sum</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+                <div class="diagram-node">Data memory / bypass<small>Load / store or ALU result</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+                <div class="diagram-node">Write-back<small>Result to register</small></div>
+              </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <h3>Shift Manager</h3>
-                        <p><strong>Sensi.AI</strong></p>
-                    </div>
-                    <div class="date">March 2022 – November 2023</div>
-                </div>
-                <ul>
-                    <li>Led a 20+ person data-annotation team, coordinating delivery and reviewing the consistency and quality of training data.</li>
-                    <li>Built an internal Python tool with pandas and NumPy to review outputs and make recurring checks more efficient.</li>
-                    <li>Investigated annotation edge cases and translated findings into feedback and bug reports for R&amp;D.</li>
-                </ul>
+          </figure>
+          <a class="evidence-link" href="finalPROJECT.pdf">Read the MIPS project report <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="architecture-project" aria-labelledby="cmos-title">
+        <div class="architecture-meta"><span>04</span><span>Analog IC design</span></div>
+        <div class="architecture-body">
+          <h3 id="cmos-title">CMOS operational amplifier</h3>
+          <p>A transistor-level, two-stage amplifier study: design the signal path, stabilize it with compensation, then characterize the simulated behavior. This is simulation work, not a claim of fabricated silicon.</p>
+          <figure class="block-diagram diagram-cmos" aria-label="CMOS operational amplifier signal, compensation and simulation block diagram">
+            <figcaption><span>Block diagram</span><span>Two-stage analog signal path</span></figcaption>
+            <div class="diagram-track">
+              <div class="diagram-node">Differential input pair<small>V+ and V−</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">First gain stage<small>Input amplification</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node diagram-node-accent">Second gain stage<small>Voltage gain</small></div><span class="diagram-arrow" aria-hidden="true">→</span>
+              <div class="diagram-node">Output load<small>Simulated response</small></div>
             </div>
-        </section>
+            <div class="diagram-support"><span>Compensation network</span><span aria-hidden="true">↗</span><span>Miller capacitor + resistor across gain stages</span></div>
+            <div class="diagram-measure">LTspice characterization <span>Gain / phase margin / slew rate</span></div>
+          </figure>
+          <a class="evidence-link" href="mini%20project%20op%20amp%20design-1.pdf">Read the CMOS design report <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="architecture-project" aria-labelledby="verilog-title">
+        <div class="architecture-meta"><span>05</span><span>RTL / state machines</span></div>
+        <div class="architecture-body">
+          <h3 id="verilog-title">Verilog TX/RX</h3>
+          <p>A transmitter and receiver modeled as coordinated finite-state machines. The emphasis is on timing, state transitions and the data path between them.</p>
+          <figure class="block-diagram diagram-verilog" aria-label="Verilog TX/RX transmitter, receiver and testbench block diagram">
+            <figcaption><span>Block diagram</span><span>Control and data paths</span></figcaption>
+            <div class="diagram-pair">
+              <div class="diagram-cluster"><span class="cluster-title">Transmit unit</span><div class="diagram-node">TX state machine<small>Sequence + control</small></div><span class="diagram-down" aria-hidden="true">↓</span><div class="diagram-node diagram-node-accent">TX datapath<small>Outgoing data</small></div></div>
+              <div class="diagram-transfer"><span>Transfer link</span><b aria-hidden="true">→</b><small>TX output to RX input</small></div>
+              <div class="diagram-cluster"><span class="cluster-title">Receive unit</span><div class="diagram-node">RX state machine<small>Sequence + control</small></div><span class="diagram-down" aria-hidden="true">↓</span><div class="diagram-node diagram-node-accent">RX datapath<small>Captured data</small></div></div>
+            </div>
+            <div class="diagram-measure">Testbench validation <span>TX, RX and integrated waveforms</span></div>
+          </figure>
+          <a class="evidence-link" href="I%20am%20sharing%20_final%20pres_%20with%20you.pdf">View the TX/RX presentation <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </section>
 
-        <section id="projects">
-            <h2>SELECTED PROJECTS</h2>
-            <div class="card">
-                <h3><a href="https://raz-dv-ee.github.io/CalEyeZ/" target="_blank" rel="noopener noreferrer">CalEyeZ — Computer Vision &amp; Sensor Fusion</a></h3>
-                <ul>
-                    <li>Co-developed a working system that combines food recognition, weight from a BLE scale, and nutritional lookup to estimate calories and macronutrients.</li>
-                    <li>Used two specialist vision models and a learned arbiter to handle both international and local foods; tested failures and revised the system based on measured results.</li>
-                    <li>Integrated the sensing, inference, and user interface in a Python desktop application. <a href="https://github.com/raz-dv-ee/CalEyeZ" target="_blank" rel="noopener noreferrer">View the project repository</a>.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3><a href="finalPROJECT.pdf" target="_blank" rel="noopener noreferrer">MIPS Processor Architecture &amp; Performance Optimization (VLSI)</a></h3>
-                <ul>
-                    <li>Designed a single-cycle MIPS processor in Verilog and explored ISA and datapath optimizations.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3><a href="mini project op amp design-1.pdf" target="_blank" rel="noopener noreferrer">CMOS Operational Amplifier Design (Analog IC Design)</a></h3>
-                <ul>
-                    <li>Designed a two-stage CMOS Op-Amp from scratch at the transistor level and performed comprehensive characterization using LTspice to validate key performance metrics.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3><a href="I am sharing _final pres_ with you.pdf" target="_blank" rel="noopener noreferrer">Digital TX/RX Communication System (Digital Design)</a></h3>
-                <ul>
-                    <li>Implemented transmitter and receiver modules in Verilog, with finite-state machines coordinating the data flow.</li>
-                </ul>
-            </div>
-         
-        </section>
-
-        <section id="education">
-            <h2>EDUCATION</h2>
-            <div class="card">
-                <h3>B.Sc., Electrical &amp; Electronics Engineering</h3>
-                <p><strong>Shenkar, Ramat Gan</strong> | 2021–2026 (degree eligibility confirmation pending)</p>
-                <ul>
-                    <li><strong>Focus:</strong> Robotics, computer vision, image processing, control systems, and electronic hardware.</li>
-                    <li><strong>Selected coursework:</strong> Electronic Devices (100), Signals &amp; Systems Analysis (97), Analog Sub-System Design (95), Computer Hardware Structure &amp; Design (87).</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>CORE SKILLS &amp; TOOLS</h2>
-            <div class="card skills-grid">
-                <div>
-                    <h3>Systems &amp; Validation</h3>
-                    <ul>
-                        <li>System Integration</li>
-                        <li>Root-Cause Analysis</li>
-                        <li>Hardware Validation</li>
-                        <li>Test Planning</li>
-                        <li>RF Testing</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Controls &amp; Sensing</h3>
-                    <ul>
-                        <li>Sensor Integration</li>
-                        <li>Industrial System Diagnostics</li>
-                        <li>Drive and I/O Troubleshooting</li>
-                        <li>ESP32 and C</li>
-                        <li>Analog Signal Conditioning</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Hardware &amp; Design</h3>
-                    <ul>
-                        <li>Digital Logic</li>
-                        <li>Verilog</li>
-                        <li>LTspice</li>
-                        <li>Analog IC Design</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Software &amp; Data</h3>
-                    <ul>
-                        <li>Python (Pandas, NumPy)</li>
-                        <li>Data Analysis and Visualization</li>
-                        <li>Computer Vision</li>
-                        <li>Machine Learning Evaluation</li>
-                        <li>Automation Tools</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2026 Raz Dvora</p>
-        </footer>
-
+    <section id="approach" class="approach" aria-labelledby="approach-title">
+      <p class="section-kicker">How I work</p>
+      <h2 id="approach-title">Trace the signal.<br>Question the model.<br>Verify the outcome.</h2>
+      <p>I am an electrical and electronics engineer drawn to work that crosses disciplines. I start with the behavior of the real system, build a clear model of what should happen, and use experiments and software to test the gap between the two.</p>
+    </section>
+  </main>
+  <footer id="contact">
+    <div><p class="section-kicker">Let's talk about engineering</p><h2>Build something<br>that holds up in reality.</h2></div>
+    <div class="footer-links">
+      <a href="mailto:Razdvora232@gmail.com">Email Raz <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/raz-dv-ee">GitHub projects <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/raz-dvora/">LinkedIn profile <span aria-hidden="true">↗</span></a>
     </div>
+    <div class="footer-bottom"><span>Raz Dvora © 2026</span><a href="#top">Back to top ↑</a></div>
+  </footer>
 </body>
 </html>
